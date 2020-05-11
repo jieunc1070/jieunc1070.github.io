@@ -4,18 +4,18 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
+title: jieun
 subtitle:
 description:
-author: John Doe
+author: jieun
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: en
 date_format: '%Y-%m-%d'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com' and baseurl as '/child'
-url:
-baseurl:
+url: "https://jieunc1070.github.io"
+baseurl: ""
 permalink: pretty
 
 # Pagination
@@ -118,7 +118,7 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  #categories: /categories/
+  categories: /categories/
   #about: /about/
   archives: /archives/
   tags: /tags/
@@ -223,7 +223,7 @@ font:
 #   Key is the name of the item and value is the name of FontAwesome icon. Key is case-senstive.
 #   When an globe mask icon presenting up means that the item has no mapping icon.
 social_icons:
-  enable: true
+  enable: False
   # Icon Mappings.
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
@@ -362,8 +362,8 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: false
-  per_page: false
+  enable: True
+  per_page: True
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
@@ -736,3 +736,5 @@ images: assets/images
 
 # Theme version
 version: 5.1.1
+
+remote_theme : Simpleyyt/jekyll-theme-next
