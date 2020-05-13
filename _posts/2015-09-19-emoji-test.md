@@ -1,6 +1,6 @@
 ---
 title: Emoji Test
-categories: MD
+categories: MD tutorial
 tags:
 ---
 
