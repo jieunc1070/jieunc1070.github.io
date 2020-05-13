@@ -79,7 +79,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Python, JAVA, Deep-learning"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -728,6 +728,10 @@ vendors:
   # https://github.com/ethantw/Han
   han:
 
+# Comment
+duoshuo:
+  enable: true
+  shortname: your-duoshuo-shortname
 
 # Assets
 css: assets/css
