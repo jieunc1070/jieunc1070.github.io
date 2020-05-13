@@ -728,11 +728,6 @@ vendors:
   # https://github.com/ethantw/Han
   han:
 
-# Comment
-duoshuo:
-  enable: true
-  shortname: your-duoshuo-shortname
-
 # Assets
 css: assets/css
 js: assets/js
