@@ -1,5 +1,5 @@
 ---
-title: Tensorflow 2.0 keras custom metric F1-score
+title: "[Tensorflow] 2.0 keras custom metric F1-score"
 date: 2020-05-13 21:33:00
 categories:
 - Python
