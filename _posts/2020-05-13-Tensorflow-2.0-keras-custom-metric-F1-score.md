@@ -1,5 +1,6 @@
 ---
-title: "[Tensorflow] 2.0 keras custom metric F1-score"
+title: "[Tensorflow] Tensorflow 2.0 keras custom metric F1-score"
+description: F1-score을 custom metric으로 정의합니다.
 date: 2020-05-13 21:33:00
 categories:
 - Python
@@ -8,7 +9,7 @@ tags:
 - Keras
 ---
 
-Tensorflow 2.0 keras로 F1 score를 custom metric으로 정의했는데, 모델 학습 과정을 보니 값이 좀 이상했습니다.
+Tensorflow 2.0 keras에서 F1 score를 custom metric으로 정의했는데, 모델 학습 과정을 보니 값이 좀 이상했습니다.
 
 
 F1 score를 계산하는 함수 자체는 잘못된 점이 없는 것 같아서 K.print_tensor로 y_true, y_pred 값을 출력해 보았습니다.
@@ -46,6 +47,7 @@ def f1_score(y_true, y_pred):
 {% endhighlight %}
 
 y_true와 y_pred가 shape이 다른데다가 y_true로는 라벨이, y_pred로는 softmax 결과 값이 들어오고 있었습니다.
+
 
 그래서 아래와 같은 코드로 수정했더니 F1 score가 정상적으로 계산되었습니다.
 
