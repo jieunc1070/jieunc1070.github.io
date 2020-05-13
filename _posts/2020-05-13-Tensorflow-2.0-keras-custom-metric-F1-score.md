@@ -1,6 +1,5 @@
 ---
 title: "[Tensorflow] Tensorflow 2.0 keras custom metric F1-score"
-description: F1-score을 custom metric으로 정의
 date: 2020-05-13 21:33:00
 categories:
 - Python
