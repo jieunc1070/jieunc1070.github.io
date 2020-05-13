@@ -16,7 +16,6 @@ import tensorflow.keras.backend as K
 def f1_score(y_true, y_pred):
     K.print_tensor(y_true)
     K.print_tensor(y_pred)
-
     true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
     possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
     predicted_positives = K.sum(K.round(K.clip(y_pred, 0, 1)))
@@ -51,8 +50,6 @@ import tensorflow.keras.backend as K
 def f1_score(y_true, y_pred):
     y_true = tf.reshape(y_true, (-1,))
     y_pred = tf.cast(tf.math.argmax(y_pred, 1), float)
-
-    # taken from old keras source code
     true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
     possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
     predicted_positives = K.sum(K.round(K.clip(y_pred, 0, 1)))
