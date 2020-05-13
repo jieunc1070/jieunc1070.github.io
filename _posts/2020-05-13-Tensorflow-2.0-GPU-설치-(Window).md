@@ -1,12 +1,13 @@
 ---
 title: "[Tensorflow] Tensorflow 2.0 GPU 설치 (Window)"
-description: Tensorflow 2.2.0 기준 설치 과정
 date: 2020-05-13
 categories:
 - Tensorflow
 tags:
 - Tensorflow
 ---
+
+이 글에서는 **Tensorflow 2.2.0** 기준 설치 과정을 설명합니다.
 
 ### 1. 환경 셋팅
 1. Visual Studio 2017 설치 ([링크](https://docs.microsoft.com/ko-kr/visualstudio/releasenotes/vs2017-relnotes))
