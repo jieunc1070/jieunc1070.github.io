@@ -45,7 +45,7 @@ def f1_score(y_true, y_pred):
  [1.95544952e-11 1]]
 {% endhighlight %}
 
-y_true와 y_pred가 shape이 다른데다가 y_true로는 라벨이, y_pred로는 softmax 결과 값이 들어오고 있었습니다.
+y_true와 y_pred의 shape이 다른데다가 y_true로는 라벨이, y_pred로는 softmax 결과 값이 들어오고 있었습니다.
 
 그래서 아래와 같은 코드로 수정했더니 F1 score가 정상적으로 계산되었습니다.
 
