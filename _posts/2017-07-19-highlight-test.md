@@ -1,7 +1,7 @@
 ---
 title: Highlight Test
 categories:
- - tutorial
+ - MD tutorial
 tags:
 ---
 
