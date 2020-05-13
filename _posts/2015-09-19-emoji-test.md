@@ -1,5 +1,6 @@
 ---
 title: Emoji Test
+categories: MD
 tags:
 ---
 
