@@ -2,7 +2,7 @@
 title: "[Tensorflow] Tensorflow 2.0 GPU 설치 (Window)"
 date: 2020-05-13
 categories:
-- Tensorflow
+- ETC
 tags:
 - Tensorflow
 ---
