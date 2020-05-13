@@ -25,10 +25,10 @@ tags:
 
 ### 가상환경 생성 및 tesoflow-gpu 설치
 Tensorflow gpu를 설치할 가상환경(tf2.0-gpu)을 생성하고, 가상환경 내에 tesoflow-gpu 설치
-{% highlight ruby %}
+```
 C:\Users\jieun>conda create --name tf2.0-gpu
-{% endhighlight %}
-{% highlight ruby %}
+```
+```
 C:\Users\jieun>conda activate tf2.0-gpu
 (tf2.0-gpu) C:\Users\jieun> pip install tensorflow-gpu
-{% endhighlight %}
+```
