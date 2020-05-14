@@ -9,7 +9,7 @@ tags:
 - Dimensionality Reduction
 ---
 
-　이번 포스팅에서는 비선형 차원축소 기법 중 하나인 **Kernel PCA**에 대하여 알아보겠습니다. 이름에서 알 수 있듯이 Kernel trick과 PCA가 함께 사용되는 기법이기 때문에, 먼저 **Kernel Trick**과 **PCA**에 대한 이해가 필요한데요. PCA에 대한 설명은 이전 글(링크)[]을 참고하시면 됩니다.
+　이번 포스팅에서는 비선형 차원축소 기법 중 하나인 **Kernel PCA**에 대하여 알아보겠습니다. 이름에서 알 수 있듯이 Kernel trick과 PCA가 함께 사용되는 기법이기 때문에, 먼저 **Kernel Trick**과 **PCA**에 대한 이해가 필요한데요. PCA에 대한 설명은 (이전 포스팅)[https://jieunc1070.github.io/data%20analysis/2020/05/14/PCA/]을 참고하시면 됩니다.
 
 ## Kernel Trick
 ![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/kernel_trick.png?raw=true" alt="kernel_trick.png)
