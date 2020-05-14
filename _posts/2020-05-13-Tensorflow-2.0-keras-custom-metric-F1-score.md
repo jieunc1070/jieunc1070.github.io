@@ -1,5 +1,5 @@
 ---
-title: "[Tensorflow] Tensorflow 2.0 keras custom metric F1-score"
+title: "[Tensorflow] Tensorflow 2.0 keras custom metric으로 F1-score 적용"
 date: 2020-05-13 21:33:00
 categories:
 - Python
