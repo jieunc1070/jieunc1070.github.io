@@ -12,7 +12,7 @@ tags:
 　이번 포스팅에서는 비선형 차원축소 기법 중 하나인 **Kernel PCA**에 대하여 알아보겠습니다. 이름에서 알 수 있듯이 Kernel trick과 PCA가 함께 사용되는 기법이기 때문에, 먼저 **Kernel Trick**과 **PCA**에 대한 이해가 필요한데요. PCA에 대한 설명은 [이전 포스팅](https://jieunc1070.github.io/data%20analysis/2020/05/14/PCA/)을 참고하시면 됩니다.
 
 ## Kernel Trick
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/kernel_trick.png?raw=true" alt="kernel_trick.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kernel_trick.png?raw=true)
 　위 그림과 같이 input space에서 선형 분류가 불가능한 데이터를 mapping function $\phi$를 통해 고차원 공간(feature space)상에 mapping하면, 데이터를 선형 분류하는 hyperplane을 찾을 수 있습니다. 하지만 고차원 mapping은 많은 연산량이 소요된다는 문제가 있습니다. 이런 문제를 해결하면서, 고차원의 이점을 취하는 방법이 바로 **Kernel Trick**입니다.
 　kernel trick은 input space의 두 벡터 xi, xj를 받아서 고차원 상에서의 내적 값을 출력하는 kernel fucntion K를 찾습니다. 다시 말해 데이터를 고차원 상에 mapping하지 않고도 데이터를 고차원 상에 mapping한 것과 같은 효과를 얻는 것인데, 이를 수식으로 표현하면 다음과 같습니다.
 
@@ -20,7 +20,7 @@ $$K(x_i,x_j)=\phi(x_i)^T\phi(x_i)$$
 
 
 ## Kernel PCA
- ![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/kpca.png?raw=true" alt="kpca.png)
+ ![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kpca.png?raw=true)
  
 　([출처](https://www.semanticscholar.org/paper/Kernel-principal-component-analysis-for-stochastic-Ma-Zabaras/4579d759e087d66599623c2338439ca6419eafbd)) 이와 같은 한계점의 대안으로, Kenel PCA를 사용할 수 있습니다. Kernel PCA의 핵심 아이디어는 비선형 kernel function $\phi$을 통해 데이터를 고차원 공간(F)에 mapping한 뒤, 고차원 공간(F)에서 PCA를 수행함으로써 다시 저차원 공간에 projection한다는 것입니다. Kernel PCA의 수행 과정을 수식으로 나타내면 다음과 같습니다.
 
@@ -99,7 +99,7 @@ plt.xlabel('x coordinate')
 
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/halfmoon.png?raw=true" alt="halfmoon.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/halfmoon.png?raw=true)
 
 　위 그림에서 볼 수 있듯, 하프문 데이터는 선형 분류가 불가능한 데이터입니다. 이러한 비선형 데이터에 Linear PCA를 적용하면 다음과 같은 결과가 나타납니다.
 ``` ruby
@@ -117,7 +117,7 @@ plt.xlabel('PC1')
 plt.ylabel('PC2')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/halfmoon_pca.png?raw=true" alt="halfmoon_pca.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/halfmoon_pca.png?raw=true)
 ``` ruby
 import numpy as np
 scikit_pca = PCA(n_components=1)
@@ -132,7 +132,7 @@ plt.xlabel('PC1')
 
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/halfmoon_pca_2.png?raw=true" alt="halfmoon_pca_2.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/halfmoon_pca_2.png?raw=true)
 
 　첫번째 그림은 Linear PCA의 결과로 얻어지는 두 개의 주성분 축에 데이터를 projection한 결과를, 두번째 그림은 첫 번째 주성분 축에 데이터를 projection한 결과를 보여줍니다. Linear PCA 결과, 데이터를 선형 분류하는 것은 여전히 불가능합니다. 그렇다면 Kernel PCA를 사용하면 어떤 상반된 결과가 도출될까요? 하프문 데이터에 Gaussian RBF kernel PCA을 사용한 결과는 다음과 같습니다.
 ``` ruby
@@ -151,7 +151,7 @@ plt.xlabel('PC1')
 plt.ylabel('PC2')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/halfmoon_kpca.png?raw=true" alt="halfmoon_kpca.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/halfmoon_kpca.png?raw=true)
 ``` ruby
 scikit_kpca = KernelPCA(n_components=1, kernel='rbf', gamma=15)
 X_skernpca = scikit_kpca.fit_transform(X)
@@ -164,7 +164,7 @@ plt.title('First principal component after RBF Kernel PCA')
 plt.xlabel('PC1')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/halfmoon_kpca_2.png?raw=true" alt="halfmoon_kpca_2.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/halfmoon_kpca_2.png?raw=true)
 
 　PCA에서와 마찬가지로, 첫번째 그림은 Gaussian RBF kernel PCA의 결과로 얻어지는 두 개의 주성분 축에 데이터를 projection한 결과를, 두번째 그림은 첫 번째 주성분 축에 데이터를 projection한 결과를 보여줍니다. Linear PCA와 달리, 선형 분류가 가능해 졌음을 확인할 수 있습니다.
 
@@ -184,7 +184,7 @@ plt.ylabel('y coordinate')
 plt.xlabel('x coordinate')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/concentric.png?raw=true" alt="concentric.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/concentric.png?raw=true)
 
 　동심원 데이터 역시 선형 분류가 불가능한 데이터 입니다. 이 데이터에 Linear PCA와 Gaussian RBF kernel PCA를 적용하여 각각의 첫번째 주성분 축에 데이터를 projection한 결과는 다음과 같습니다.
 ``` ruby
@@ -200,7 +200,7 @@ plt.title('First principal component after Linear PCA')
 plt.xlabel('PC1')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/concentric_pca.png?raw=true" alt="concentric_pca.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/concentric_pca.png?raw=true)
 ``` ruby
 scikit_kpca = KernelPCA(n_components=1, kernel='rbf', gamma=15)
 X_skernpca = scikit_kpca.fit_transform(X)
@@ -213,7 +213,7 @@ plt.title('First principal component after RBF Kernel PCA')
 plt.xlabel('PC1')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/concentric_kpca.png?raw=true" alt="concentric_kpca.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/concentric_kpca.png?raw=true)
 
 　Linear PCA와 달리, Gaussian RBF kernel PCA를 시행한 결과 데이터의 선형 분류가 가능해 졌음을 알 수 있습니다.
 
@@ -231,7 +231,7 @@ ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=color, cmap=plt.cm.rainbow)
 plt.title('Swiss Roll in 3D')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/swiss.png?raw=true" alt="swiss.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/swiss.png?raw=true)
 
 　앞서 살펴보았던 하프문, 동심원 데이터는 2차원 상의 데이터였는데요. 이번에는 3차원의 스위스 롤 데이터에 Linear PCA, Gaussian RBF kernel PCA과 polynomial kernel PCA를 적용한 결과를 비교해 보고자 합니다.
 ``` ruby
@@ -245,7 +245,7 @@ plt.xlabel('PC1')
 plt.ylabel('PC2')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/swiss_pca.png?raw=true" alt="swiss_pca.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/swiss_pca.png?raw=true)
 ``` ruby
 scikit_kpca = KernelPCA(n_components=2, kernel='rbf', gamma=0.1)
 X_skernpca = scikit_kpca.fit_transform(X)
@@ -258,7 +258,7 @@ plt.xlabel('PC1')
 plt.ylabel('PC2')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/swiss_rbf.png?raw=true" alt="swiss_rbf.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/swiss_rbf.png?raw=true)
 ``` ruby
 scikit_kpca = KernelPCA(n_components=2, kernel='poly', gamma=0.1)
 X_skernpca = scikit_kpca.fit_transform(X)
@@ -271,7 +271,7 @@ plt.xlabel('PC1')
 plt.ylabel('PC2')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/swiss_poly.png?raw=true" alt="swiss_poly.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/swiss_poly.png?raw=true)
 
 　스위스 롤 데이터에 Linear PCA, Gaussian RBF kernel PCA과 polynomial kernel PCA를 적용한 결과, 세 기법 모두 스위스 롤 데이터를 펼친(unroll) 본질적인 특성을 보여주지는 못하고 있습니다. 이러한 한계점을 보완해 줄 있는 비선형 차원축소 기법이 Locally Linear Embedding(LLE)입니다. LLE는 데이터 간의 본질적 거리를 보존하면서 데이터를 고차원에서 저차원 상으로 축소시키는 기법으로, 매니폴드 학습(manifold learning)에 해당합니다. 스위스 롤 데이터에 LLE 기법을 적용한 결과는 다음과 같습니다.
 ``` ruby
@@ -285,4 +285,4 @@ plt.scatter(X_lle[:, 0], X_lle[:, 1], c=color, cmap=plt.cm.rainbow)
 plt.title('First 2 principal components after Locally Linear Embedding')
 plt.show()
 ```
-![](https://github.com/jieunc1070/jieunc1070.github.io/assets/images/post/swiss_lle.png?raw=true" alt="swiss_lle.png)
+![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/swiss_lle.png?raw=true)
