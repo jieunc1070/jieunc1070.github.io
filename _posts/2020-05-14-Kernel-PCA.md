@@ -13,7 +13,7 @@ tags:
 
 ## Kernel Trick
 ![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kernel_trick.png?raw=true)
-　위 그림과 같이 input space에서 선형 분류가 불가능한 데이터를 mapping function $\phi$를 통해 고차원 공간(feature space)상에 mapping하면, 데이터를 선형 분류하는 hyperplane을 찾을 수 있습니다. 하지만 고차원 mapping은 많은 연산량이 소요된다는 문제가 있습니다. 이런 문제를 해결하면서, 고차원의 이점을 취하는 방법이 바로 **Kernel Trick**입니다.
+　위 그림과 같이 input space에서 선형 분류가 불가능한 데이터를 mapping function $$\phi$$를 통해 고차원 공간(feature space)상에 mapping하면, 데이터를 선형 분류하는 hyperplane을 찾을 수 있습니다. 하지만 고차원 mapping은 많은 연산량이 소요된다는 문제가 있습니다. 이런 문제를 해결하면서, 고차원의 이점을 취하는 방법이 바로 **Kernel Trick**입니다.
 　kernel trick은 input space의 두 벡터 xi, xj를 받아서 고차원 상에서의 내적 값을 출력하는 kernel fucntion K를 찾습니다. 다시 말해 데이터를 고차원 상에 mapping하지 않고도 데이터를 고차원 상에 mapping한 것과 같은 효과를 얻는 것인데, 이를 수식으로 표현하면 다음과 같습니다.
 
 $$K(x_i,x_j)=\phi(x_i)^T\phi(x_i)$$
@@ -22,7 +22,7 @@ $$K(x_i,x_j)=\phi(x_i)^T\phi(x_i)$$
 ## Kernel PCA
  ![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kpca.png?raw=true)
  
-　([출처](https://www.semanticscholar.org/paper/Kernel-principal-component-analysis-for-stochastic-Ma-Zabaras/4579d759e087d66599623c2338439ca6419eafbd)) 이와 같은 한계점의 대안으로, Kenel PCA를 사용할 수 있습니다. Kernel PCA의 핵심 아이디어는 비선형 kernel function $\phi$을 통해 데이터를 고차원 공간(F)에 mapping한 뒤, 고차원 공간(F)에서 PCA를 수행함으로써 다시 저차원 공간에 projection한다는 것입니다. Kernel PCA의 수행 과정을 수식으로 나타내면 다음과 같습니다.
+　([출처](https://www.semanticscholar.org/paper/Kernel-principal-component-analysis-for-stochastic-Ma-Zabaras/4579d759e087d66599623c2338439ca6419eafbd)) 이와 같은 한계점의 대안으로, Kenel PCA를 사용할 수 있습니다. Kernel PCA의 핵심 아이디어는 비선형 kernel function $$\phi$$을 통해 데이터를 고차원 공간(F)에 mapping한 뒤, 고차원 공간(F)에서 PCA를 수행함으로써 다시 저차원 공간에 projection한다는 것입니다. Kernel PCA의 수행 과정을 수식으로 나타내면 다음과 같습니다.
 
 　먼저, 고차원 공간(feature space) 상에 mapping된 data point가 centering되어 있어 평균이 0이라고 가정합니다.
 
@@ -32,7 +32,7 @@ $$m^\phi={1 \over N}\sum_{i=1}^N\phi(x_i)=0$$
 
 $$C^\phi={1 \over N}\sum_{i=1}^N(\phi(x_i)-m^\phi)(\phi(x_i)-m^\phi)^T={1 \over N}\sum_{i=1}^N\phi(x_i)\phi(x_i)^T$$
 
-　공분산행렬 C의 eigenvalue $\lambda_k$와 eigenvector $v_k$는 다음과 같이 구할 수 있습니다.
+　공분산행렬 C의 eigenvalue $$\lambda_k$$와 eigenvector $$v_k$$는 다음과 같이 구할 수 있습니다.
 
 $$C^\phi v_k=\lambda_k v_k$$
 
@@ -40,7 +40,7 @@ $$C^\phi v_k=\lambda_k v_k$$
 
 $${1 \over N}\sum_{i=1}^N\phi(x_i)\phi(x_i)^Tv_k=\lambda_k v_k$$
 
-　아래 식에서 $\phi(x_i)v_k$은 scalar이기 때문에 공분산행렬 C의 eigenvector $v_k$는 아래와 같이 고차원 상에 mapping된 data point들의 선형 결합으로 표현이 가능합니다.
+　아래 식에서 $$\phi(x_i)v_k$$은 scalar이기 때문에 공분산행렬 C의 eigenvector $$v_k$$는 아래와 같이 고차원 상에 mapping된 data point들의 선형 결합으로 표현이 가능합니다.
 
 $$v_k={1 \over \lambda N}\sum_{i=1}^N\phi(x_i)\phi(x_i)^Tv_k={1 \over \lambda N}\sum_{i=1}^N\phi(x_i)v_k\phi(x_i)^T$$
 
@@ -54,7 +54,7 @@ $${1 \over N}\sum_{i=1}^N\phi(x_i)\sum_{j=1}^N\alpha_{kj}\phi(x_i)^T\phi(x_j)=\l
 
 $$K(x_i,x_j)=\phi(x_i)^T\phi(x_j)$$
 
-　양 변에 $\phi(x_i)$을 곱하여 고차원 상에서의 data point들의 내적 값인 $\phi(x_i)^T\phi(x_j)$을 위에서 정의한 kernel function으로 치환합니다.
+　양 변에 $$\phi(x_i)$$을 곱하여 고차원 상에서의 data point들의 내적 값인 $$\phi(x_i)^T\phi(x_j)$$을 위에서 정의한 kernel function으로 치환합니다.
 
 $${1 \over N}\sum_{i=1}^N\phi(x_l)^T\phi(x_i)\sum_{j=1}^N\alpha_{kj}\phi(x_i)^T\phi(x_j)=\lambda_k \sum_{i=1}^N\alpha_{kj}\phi(x_l)^T\phi(x_i)$$
 
@@ -70,7 +70,7 @@ $$K\alpha_k=\lambda_k N \alpha_k$$
 
 $$y_k(x)=\phi(x)^Tv_k=\sum_{i=1}^N\alpha_{ki}K(x,x_i)$$
 
-　지금까지의 진행 과정은 고차원 공간(feature space) 상에 mapping된 data point가 centering되어 있는 경우에 해당하는데요. data point가 centering되어 있지 않은 경우에는 아래와 같이 feature space에서 데이터를 표준화하는 과정을 거치게 됩니다. 아래 식에서 $1_N$은 모든 원소의 값이 $1 \over N$으로 이루어진 N X N 행렬을 의미합니다. 
+　지금까지의 진행 과정은 고차원 공간(feature space) 상에 mapping된 data point가 centering되어 있는 경우에 해당하는데요. data point가 centering되어 있지 않은 경우에는 아래와 같이 feature space에서 데이터를 표준화하는 과정을 거치게 됩니다. 아래 식에서 $$1_N$$은 모든 원소의 값이 $$1 \over N$$으로 이루어진 N X N 행렬을 의미합니다. 
 
 $$\tilde{K}=(I-1_N)K(I-1_N)$$
 
