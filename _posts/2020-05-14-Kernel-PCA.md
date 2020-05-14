@@ -79,7 +79,7 @@ $$=K-1_NK-K1_N+1_NK1_N$$
 ### Kernel PCA Using Python
 　여러 데이터 셋을 Kernel PCA와 Linear PCA에 적용해 보고 그 결과를 비교해 보았습니다. 코드는 [이곳](https://sebastianraschka.com/Articles/2014_kernel_pca.html)을 참고하였습니다.
  
-#### 1. Half-moon shapes
+#### Half-moon shapes
 ``` ruby
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -168,7 +168,7 @@ plt.show()
 
 　PCA에서와 마찬가지로, 첫번째 그림은 Gaussian RBF kernel PCA의 결과로 얻어지는 두 개의 주성분 축에 데이터를 projection한 결과를, 두번째 그림은 첫 번째 주성분 축에 데이터를 projection한 결과를 보여줍니다. Linear PCA와 달리, 선형 분류가 가능해 졌음을 확인할 수 있습니다.
 
-#### 2. Concentric circles
+#### Concentric circles
 ``` ruby
 from sklearn.datasets import make_circles
 
@@ -217,7 +217,7 @@ plt.show()
 
 　Linear PCA와 달리, Gaussian RBF kernel PCA를 시행한 결과 데이터의 선형 분류가 가능해 졌음을 알 수 있습니다.
 
-#### 3. Swiss roll
+#### Swiss roll
 ``` ruby
 from sklearn.datasets.samples_generator import make_swiss_roll
 from mpl_toolkits.mplot3d import Axes3D
