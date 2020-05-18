@@ -1,6 +1,6 @@
 ---
 title: "Kernel PCA"
-date: 2020-05-14
+date: 2020-05-15
 categories:
 - Data Analysis
 tags:
@@ -13,8 +13,8 @@ tags:
 
 ## Kernel Trick
 ![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kernel_trick.png?raw=true)
-　위 그림과 같이 input space에서 선형 분류가 불가능한 데이터를 mapping function $$\phi$$를 통해 고차원 공간(feature space)상에 mapping하면, 데이터를 선형 분류하는 hyperplane을 찾을 수 있습니다. 하지만 고차원 mapping은 많은 연산량이 소요된다는 문제가 있습니다. 이런 문제를 해결하면서, 고차원의 이점을 취하는 방법이 바로 **Kernel Trick**입니다.
-　kernel trick은 input space의 두 벡터 xi, xj를 받아서 고차원 상에서의 내적 값을 출력하는 kernel fucntion K를 찾습니다. 다시 말해 데이터를 고차원 상에 mapping하지 않고도 데이터를 고차원 상에 mapping한 것과 같은 효과를 얻는 것인데, 이를 수식으로 표현하면 다음과 같습니다.
+　위 그림과 같이 input space에서 선형 분류가 불가능한 데이터를 mapping function $$\phi$$를 통해 고차원 공간(feature space)상에 mapping하면, 데이터를 선형 분류하는 hyperplane을 찾을 수 있습니다. 하지만 고차원 mapping은 많은 연산량이 소요된다는 문제가 있습니다. 이런 문제를 해결하면서, 고차원의 이점을 취하는 방법이 바로 **Kernel Trick**입니다.  
+　kernel trick은 input space의 두 벡터 $$x_i$$, $$x_j$$를 받아서 고차원 상에서의 내적 값을 출력하는 kernel fucntion K를 찾습니다. 다시 말해 데이터를 고차원 상에 mapping하지 않고도 데이터를 고차원 상에 mapping한 것과 같은 효과를 얻는 것인데, 이를 수식으로 표현하면 다음과 같습니다.
 
 $$K(x_i,x_j)=\phi(x_i)^T\phi(x_i)$$
 
@@ -22,7 +22,7 @@ $$K(x_i,x_j)=\phi(x_i)^T\phi(x_i)$$
 ## Kernel PCA
  ![](https://github.com/jieunc1070/jieunc1070.github.io/blob/master/assets/images/post/kpca.png?raw=true)
  
-　([출처](https://www.semanticscholar.org/paper/Kernel-principal-component-analysis-for-stochastic-Ma-Zabaras/4579d759e087d66599623c2338439ca6419eafbd)) 이와 같은 한계점의 대안으로, Kenel PCA를 사용할 수 있습니다. Kernel PCA의 핵심 아이디어는 비선형 kernel function $$\phi$$을 통해 데이터를 고차원 공간(F)에 mapping한 뒤, 고차원 공간(F)에서 PCA를 수행함으로써 다시 저차원 공간에 projection한다는 것입니다. Kernel PCA의 수행 과정을 수식으로 나타내면 다음과 같습니다.
+　([출처](https://www.semanticscholar.org/paper/Kernel-principal-component-analysis-for-stochastic-Ma-Zabaras/4579d759e087d66599623c2338439ca6419eafbd)) Kernel PCA의 핵심 아이디어는 비선형 kernel function $$\phi$$을 통해 데이터를 고차원 공간(F)에 mapping한 뒤, 고차원 공간(F)에서 PCA를 수행함으로써 다시 저차원 공간에 projection한다는 것입니다. Kernel PCA의 수행 과정을 수식으로 나타내면 다음과 같습니다.
 
 　먼저, 고차원 공간(feature space) 상에 mapping된 data point가 centering되어 있어 평균이 0이라고 가정합니다.
 
