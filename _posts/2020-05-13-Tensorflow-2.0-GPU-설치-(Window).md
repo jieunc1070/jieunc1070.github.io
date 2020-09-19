@@ -21,7 +21,7 @@ tags:
 1-5에서 다운받은 폴더의 아래 3개 파일들을 오른쪽 경로로 이동
 - cuda/bin/cudnn64_7.dll -> C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin
 - cuda/include/cudnn.h -> C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/include
-- cuda/cudnn/lib/x64/cudnn.lib -> C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/cudnn/lib
+- cuda/cudnn/lib/x64/cudnn.lib -> C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/lib/x64
 
 ### 가상환경 생성 및 tesoflow-gpu 설치
 Tensorflow gpu를 설치할 가상환경(tf2.0-gpu)을 생성하고, 가상환경 내에 tesoflow-gpu 설치
