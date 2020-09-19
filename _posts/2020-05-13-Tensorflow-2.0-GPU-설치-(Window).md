@@ -30,5 +30,5 @@ C:\Users\jieun>conda create --name tf2.0-gpu
 ```
 ```
 C:\Users\jieun>conda activate tf2.0-gpu
-(tf2.0-gpu) C:\Users\jieun> pip install tensorflow-gpu
+(tf2.0-gpu) C:\Users\jieun> pip install tensorflow-gpu==2.2.0
 ```
